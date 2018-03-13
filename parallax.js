@@ -1,21 +1,29 @@
 /* Kirill Rezanov */
 
 class Parallax {
-    constructor(element, speed) {
-        this.element = element;
-        this.speed = speed;
-        this.parallax(this.element, this.speed);
+    constructor(element, speed, direction) {
+        this.parallax(element, speed, direction);
     }
     
-    parallax(element, speed) {
+    parallax(element, speed, direction) {
         window.addEventListener("scroll", function() {
-            var el = element;
-            var top = window.pageYOffset;
-            if(Object.prototype.toString.call(el) != "[object NodeList]") {
-                el.style.transform = "translateY("+top/speed+"px)";
+            if(direction === false) {
+                var top = window.pageYOffset;
+                if(Object.prototype.toString.call(element) != "[object NodeList]") {
+                    element.style.transform = "translateY(-"+top/speed+"px)";
+                } else {
+                    for(let i = 0; i < element.length; i++) {
+                        element[i].style.transform = "translateY(-"+top/speed+"px)";         
+                    }
+                }
             } else {
-                for(let i = 0; i < el.length; i++) {
-                    el[i].style.transform = "translateY("+top/speed+"px)";         
+                var top = window.pageYOffset;
+                if(Object.prototype.toString.call(element) != "[object NodeList]") {
+                    element.style.transform = "translateY("+top/speed+"px)";
+                } else {
+                    for(let i = 0; i < element.length; i++) {
+                        element[i].style.transform = "translateY("+top/speed+"px)";         
+                    }
                 }
             }
         });

@@ -1,0 +1,61 @@
+/* Parallax sample */
+
+body {
+	height: 100vh;
+	margin: 0;
+	font-family: "Roboto", sans-serif;
+}
+
+#back,
+#back2 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	background-image: url(../media/iStock_000080733521_Double.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	z-index: -1;
+}
+
+#back h1,
+#back2 h1 {
+	color: #fff;
+	font-size: 70px;
+	z-index: 1;
+	position: relative;
+}
+
+.test {
+	width: 100%;
+	height: 100vh;
+	background-color: #fff;
+	z-index: 1;
+	border: 2px solid #d5d5d5;
+	padding: 20px;
+	box-sizing: border-box;
+}
+
+#back,
+.test,
+#back2 {
+	position: relative;
+}
+
+.test h2 {
+	font-size: 50px;
+	color: #333;
+	text-align: center;
+	padding-top: 20px;
+}
+
+.test p {
+	font-size: 16px;
+	color: #333;
+	text-align: center;
+	width: 60%;
+	margin: auto;
+	font-weight: 400;
+}
